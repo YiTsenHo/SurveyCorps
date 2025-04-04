@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>訓練計劃報名 - 調查兵團</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: Squadfree
+  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body class="page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/logo.png" alt="logo">
+          <h1 class="sitename">調查兵團</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero" class="active">首頁</a></li>
+            <li><a href="index.html#about">關於兵團</a></li>
+            <li><a href="index.html#services">職責任務</a></li>
+            <li><a href="index.html#portfolio">戰鬥檔案</a></li>
+            <li><a href="index.html#team">指揮官</a></li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>更多資訊</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i>
+              </a>
+              <ul>
+                <li><a href="index.html#testimonials">團員心得</a></li>
+                <li><a href="index.html#pricing">訓練計劃</a></li>
+                <li><a href="index.html#faq">常見問題</a></li>
+              </ul>
+            </li>
+            <li><a href="index.html#contact">聯絡我們</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title accent-background">
+        <div class="container position-relative">
+          <h1>訓練計劃報名</h1>
+          <p>加入調查兵團，為人類的自由而戰</p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="index.html">首頁</a></li>
+              <li class="current">訓練報名</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <!-- 報名表單區域 -->
+      <section class="training-signup-section section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="signup-form-box">
+                <form id="trainingSignupForm" class="training-form" method="post">
+                  <!-- 基本資料 -->
+                  <div class="form-section">
+                    <h3><i class="bi bi-person"></i> 基本資料</h3>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label for="name" class="form-label">姓名</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="age" class="form-label">年齡</label>
+                        <input type="number" class="form-control" id="age" name="age" min="15" max="35" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="gender" class="form-label">性別</label>
+                        <select class="form-select" id="gender" name="gender" required>
+                          <option value="">請選擇</option>
+                          <option value="male">男</option>
+                          <option value="female">女</option>
+                          <option value="other">其他</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="email" class="form-label">電子郵件</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 訓練計劃選擇 -->
+                  <div class="form-section mt-4">
+                    <h3><i class="bi bi-star"></i> 訓練計劃</h3>
+                    <div class="training-plan-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="trainingPlan" id="basicPlan" value="basic" required>
+                        <label class="form-check-label" for="basicPlan">
+                          <strong>新兵訓練計劃</strong> - 基礎 / 3個月
+                          <small class="d-block text-muted">適合初次加入調查兵團的新兵</small>
+                        </label>
+                      </div>
+                      <div class="form-check mt-3">
+                        <input class="form-check-input" type="radio" name="trainingPlan" id="advancedPlan" value="advanced">
+                        <label class="form-check-label" for="advancedPlan">
+                          <strong>戰鬥班培訓</strong> - 進階 / 6個月
+                          <small class="d-block text-muted">適合已完成基礎訓練，具備實戰經驗的士兵</small>
+                        </label>
+                      </div>
+                      <div class="form-check mt-3">
+                        <input class="form-check-input" type="radio" name="trainingPlan" id="elitePlan" value="elite">
+                        <label class="form-check-label" for="elitePlan">
+                          <strong>特別作戰小組</strong> - 精英 / 持續訓練
+                          <small class="d-block text-muted">僅限優秀士兵申請，需通過特別選拔</small>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 訓練項目選擇 -->
+                  <div class="form-section mt-4">
+                    <h3><i class="bi bi-clipboard-check"></i> 訓練項目</h3>
+                    <div class="training-options">
+                      <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="basicTraining" name="training[]" value="basic">
+                        <label class="form-check-label" for="basicTraining">
+                          基礎軍事訓練
+                          <small class="d-block">包含體能訓練、戰術理論、武器使用</small>
+                        </label>
+                      </div>
+                      <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="odmTraining" name="training[]" value="odm">
+                        <label class="form-check-label" for="odmTraining">
+                          立體機動裝置訓練
+                          <small class="d-block">包含裝置操作、空中機動、目標攻擊</small>
+                        </label>
+                      </div>
+                      <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="combatTraining" name="training[]" value="combat">
+                        <label class="form-check-label" for="combatTraining">
+                          巨人戰鬥技巧
+                          <small class="d-block">包含弱點識別、戰術配合、緊急應變</small>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 健康狀況 -->
+                  <div class="form-section mt-4">
+                    <h3><i class="bi bi-heart-pulse"></i> 健康狀況</h3>
+                    <div class="mb-3">
+                      <label for="health" class="form-label">請說明您的健康狀況</label>
+                      <textarea class="form-control" id="health" name="health" rows="4"></textarea>
+                    </div>
+                  </div>
+
+                  <!-- 緊急聯絡人 -->
+                  <div class="form-section mt-4">
+                    <h3><i class="bi bi-telephone"></i> 緊急聯絡人</h3>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label for="emergencyContact" class="form-label">聯絡人姓名</label>
+                        <input type="text" class="form-control" id="emergencyContact" name="emergencyContact" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="emergencyPhone" class="form-label">聯絡電話</label>
+                        <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 同意條款 -->
+                  <div class="form-section mt-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                      <label class="form-check-label" for="terms">
+                        我已閱讀並同意<a href="terms.html">加入條款</a>及<a href="privacy-policy.html">隱私政策</a>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 提交按鈕 -->
+                  <div class="form-submit mt-4">
+                    <button type="submit" class="btn btn-primary">提交報名</button>
+                    <div class="mt-3">
+                      <div class="loading d-none">處理中...</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message d-none">報名成功！我們將盡快與您聯繫。</div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">調查兵團</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>城牆區希干希納區前哨站</p>
+              <p>古城堡改建總部</p>
+              <p class="mt-3">
+                <strong>訊號聯繫:</strong> <span>煙霧信號或城牆通訊站</span>
+              </p>
+              <p><strong>信件聯繫:</strong> <span>調查兵團總部收發處</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href="https://www.facebook.com/emuse.com.tw" target="_blank"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/attackontitan/" target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>重要連結</h4>
+            <ul>
+              <li><a href="index.html">首頁</a></li>
+              <li><a href="index.html#about">關於我們</a></li>
+              <li><a href="index.html#services">任務介紹</a></li>
+              <li><a href="terms.html">加入條款</a></li>
+              <li><a href="privacy-policy.html">隱私政策</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>兵團通訊</h4>
+            <p>訂閱我們的通訊，接收最新的任務情報和兵團動態！</p>
+            <form action="" method="post" class="newsletter-form">
+              <div class="form-group d-flex">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="請輸入您的信箱"
+                  required
+                />
+                <button type="submit" class="btn">訂閱</button>
+              </div>
+              <div class="my-3">
+                <div class="loading d-none">載入中</div>
+                <div class="error-message"></div>
+                <div class="sent-message d-none">
+                  您的訂閱請求已送出，感謝您的支持！
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>版權所有</span>
+          <strong class="px-1 sitename">調查兵團</strong>
+          <span>保留所有權利</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          設計來自 <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/training-form.js"></script>
+  </body>
+</html>
