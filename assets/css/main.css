@@ -1975,7 +1975,7 @@ section,
 
 .character-img {
   height: 240px;
-  object-fit: contain;
+  object-fit: contain; 
   background-color: rgba(47, 61, 38, 0.9);
   padding: 10px;
   border-bottom: 2px solid var(--cape-green);
