@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Starter Page - Squadfree Bootstrap Template</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet" />
+
+  <!-- =======================================================
+* Template Name: Squadfree
+* Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+======================================================== -->
+  <style>
+    :root {
+      /* 主要顏色 */
+      --background-color: #1a2416;
+      /* 深暗軍綠色背景 */
+      --surface-color: #2c3a24;
+      /* 稍淺的軍綠色表面 */
+      --heading-color: #93c571;
+      /* 明亮的軍綠色標題 */
+      --accent-color: #7ba357;
+      /* 明亮的橄欖綠強調色 */
+      --default-color: #e6e8e3;
+      /* 淺灰綠色文字 */
+      --contrast-color: #ffffff;
+      /* 純白對比色 */
+      /* 輔助顏色 */
+      --military-green: #4d6338;
+      /* 軍裝綠 */
+      --cape-green: #5f7349;
+      /* 斗篷綠 */
+      --blade-silver: #c0c5b9;
+      /* 刀鋒銀 */
+      --gear-metal: #7a8470;
+      /* 立體機動裝置金屬色 */
+      --wall-stone: #4d5244;
+      /* 城牆石材色 */
+      /* Footer特色設計 */
+      --footer-bg: #151d12;
+      /* 更深的軍綠色背景 */
+      --footer-border: #2a3522;
+      /* 深色邊框 */
+      --footer-hover: #75a854;
+      /* hover效果色 */
+      --light-text: #2f3d26;
+      /* 深色文字，用於淺色背景 */
+      --dark-form-bg: #2a3522;
+      /* 深綠色表單背景 */
+      --input-border: #4d6338;
+      /* 輸入框邊框 */
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--default-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .aot-navbar {
+      background-color: rgba(26, 36, 22, 0.9);
+      border-bottom: 2px solid var(--accent-color);
+    }
+
+    .aot-logo {
+      height: 50px;
+    }
+
+    .card {
+      background-color: var(--surface-color);
+      border: 1px solid var(--military-green);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(77, 99, 56, 0.5);
+    }
+
+    .character-card {
+      height: 420px;
+      overflow: hidden;
+      background-color: rgba(47, 61, 38, 0.9);
+    }
+
+    .character-img {
+      height: 240px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--cape-green);
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      color: var(--heading-color);
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+
+    .badge-aot {
+      background-color: var(--military-green);
+      color: var(--default-color);
+    }
+
+    .map-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 2px solid var(--military-green);
+    }
+
+    .map-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(26, 36, 22, 0.7);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .map-region:hover .map-overlay {
+      opacity: 1;
+    }
+
+    .titan-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .titan-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(26, 36, 22, 0.8);
+      padding: 15px;
+      transform: translateY(100%);
+      transition: transform 0.4s;
+    }
+
+    .titan-card:hover .titan-info {
+      transform: translateY(0);
+    }
+
+    .btn-aot {
+      background-color: var(--military-green);
+      color: var(--default-color);
+      border: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-aot::after {
+      content: '';
+      position: absolute;
+      left: -20%;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background-color: var(--accent-color);
+      transform: skewX(-20deg);
+      transition: width 0.3s;
+      z-index: -1;
+    }
+
+    .btn-aot:hover {
+      color: var(--background-color);
+    }
+
+    .btn-aot:hover::after {
+      width: 140%;
+    }
+
+    .filter-btn {
+      background-color: var(--surface-color);
+      color: var(--default-color);
+      border: 1px solid var(--gear-metal);
+    }
+
+    .filter-btn:hover {
+      background-color: var(--military-green);
+      color: var(--default-color);
+    }
+
+    .filter-btn.active {
+      background-color: var(--accent-color);
+      color: var(--background-color);
+      border-color: var(--accent-color);
+    }
+
+    .stat-bar {
+      height: 10px;
+      border-radius: 5px;
+      background-color: var(--wall-stone);
+      overflow: hidden;
+    }
+
+    .stat-bar-fill {
+      height: 100%;
+      background-color: var(--accent-color);
+    }
+
+    .map-tooltip {
+      position: absolute;
+      background: rgba(26, 36, 22, 0.9);
+      border: 1px solid var (--military-green);
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 300px;
+      display: none;
+      z-index: 100;
+    }
+
+    .titan-nav {
+      border-bottom: 2px solid var (--military-green);
+    }
+
+    .titan-nav .nav-link {
+      color: var(--default-color);
+    }
+
+    .titan-nav .nav-link.active {
+      background-color: var (--military-green);
+      color: var (--default-color);
+      border: none;
+    }
+
+    .secret-info {
+      background-color: rgba(77, 99, 56, 0.2);
+      border-left: 4px solid var(--military-green);
+      padding: 10px;
+      margin-top: 15px;
+    }
+
+    .card-header {
+      background-color: var(--military-green);
+      color: var(--default-color);
+      border-bottom: 1px solid var(--cape-green);
+    }
+
+    .text-highlight {
+      color: var(--heading-color);
+    }
+
+    .bg-dark {
+      background-color: var(--surface-color) !important;
+    }
+
+    .border-secondary {
+      border-color: var(--military-green) !important;
+    }
+
+    .text-warning {
+      color: var(--heading-color) !important;
+    }
+
+    .text-danger {
+      color: var(--accent-color) !important;
+    }
+
+    .alert-danger {
+      background-color: rgba(77, 99, 56, 0.3);
+      border-color: var(--military-green);
+      color: var (--heading-color);
+    }
+
+    .input-group-text {
+      background-color: var(--dark-form-bg);
+      color: var(--default-color);
+      border-color: var(--input-border);
+    }
+
+    .form-control {
+      background-color: var(--dark-form-bg);
+      color: var(--default-color);
+      border-color: var(--input-border);
+    }
+
+    .form-control:focus {
+      background-color: var(--surface-color);
+      color: var(--default-color);
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 0.25rem rgba(123, 163, 87, 0.25);
+    }
+
+    .card-text {
+      color: rgba(230, 232, 227, 0.9) !important;
+    }
+
+    .text-muted {
+      color: rgba(230, 232, 227, 0.8) !important;
+    }
+
+    small {
+      color: rgba(230, 232, 227, 0.85) !important;
+    }
+
+    .card-body {
+      color: rgba(230, 232, 227, 0.95);
+    }
+
+    /* 動畫效果 */
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+</head>
+
+<body class="starter-page-page">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="logo">
+        <h1 class="sitename">調查兵團</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="active">首頁</a></li>
+          <li><a href="index.html#about">關於兵團</a></li>
+          <li><a href="index.html#services">職責任務</a></li>
+          <li><a href="index.html#portfolio">戰鬥檔案</a></li>
+          <li><a href="index.html#team">指揮官</a></li>
+          <li class="dropdown">
+            <a href="#"><span>更多資訊</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              <li><a href="index.html#testimonials">團員心得</a></li>
+              <li><a href="index.html#pricing">訓練計劃</a></li>
+              <li><a href="index.html#faq">常見問題</a></li>
+              <li><a href="database.html">調查兵團資料庫</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">聯絡我們</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 內容區域 -->
+  <div class="container mt-5 pt-5">
+    <!-- 士兵數據庫 -->
+    <section id="soldiers" class="my-5 fade-in">
+      <h2 class="section-title mb-4">士兵數據庫</h2>
+
+      <!-- 搜索和篩選 -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa fa-search"></i>
+            </span>
+            <input type="text" id="searchInput" class="form-control" placeholder="搜尋士兵...">
+          </div>
+        </div>
+        <div class="col-md-6 d-flex flex-wrap justify-content-end gap-2 mt-3 mt-md-0">
+          <button class="btn btn-sm filter-btn active">全部</button>
+          <button class="btn btn-sm filter-btn">指揮官</button>
+          <button class="btn btn-sm filter-btn">特別作戰班</button>
+          <button class="btn btn-sm filter-btn">一般士兵</button>
+        </div>
+      </div>
+
+      <!-- 角色卡片 -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- 艾爾文 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/erwin.png" class="character-img" alt="艾爾文·史密斯">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>艾爾文·史密斯</span>
+                <span class="badge badge-aot">指揮官</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">第13任團長</span>
+              </div>
+              <p class="card-text small">第13任調查兵團團長，帶領人類走向真相的關鍵人物。他的戰略思維與決斷力使調查兵團在艱困中屢創佳績。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">領導能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">戰略規劃</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 里維 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/levi.png" class="character-img" alt="里維·阿卡曼">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>里維·阿卡曼</span>
+                <span class="badge badge-aot">特別作戰班</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">人類最強士兵</span>
+              </div>
+              <p class="card-text small">調查兵團特別作戰班班長，人類最強士兵。擁有出眾的戰鬥能力和領導才能，是兵團的重要戰力。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">戰鬥能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">團隊合作</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 韓吉 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/hange.png" class="character-img" alt="韓吉·佐耶">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>韓吉·佐耶</span>
+                <span class="badge badge-aot">指揮官</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">分隊長</span>
+              </div>
+              <p class="card-text small">調查兵團分隊長，負責巨人研究。擁有敏銳的觀察力和分析能力，為人類對抗巨人提供重要的科學依據。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">研究能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">戰鬥技能</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 米卡莎 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/mikasa.png" class="character-img" alt="米卡莎·阿卡曼">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>米卡莎·阿卡曼</span>
+                <span class="badge badge-aot">一般士兵</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">104期訓練生</span>
+              </div>
+              <p class="card-text small">擁有優秀的戰鬥天賦，在訓練兵團中以優異成績畢業。具有阿卡曼血統，戰鬥能力極為出眾。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">戰鬥能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">團隊合作</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 艾連 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/eren.png" class="character-img" alt="艾連·葉卡">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>艾連·葉卡</span>
+                <span class="badge badge-aot">一般士兵</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">104期訓練生</span>
+              </div>
+              <p class="card-text small">立志消滅所有巨人的熱血士兵，具有堅強的意志力和決心。在訓練兵團中表現出色。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">意志力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">戰鬥技能</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阿爾敏 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/armin.png" class="character-img" alt="阿爾敏·亞魯雷特">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>阿爾敏·亞魯雷特</span>
+                <span class="badge badge-aot">一般士兵</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">104期訓練生</span>
+              </div>
+              <p class="card-text small">具有優秀的戰略思維和分析能力，常常在關鍵時刻提供重要的戰術建議。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">戰略規劃</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">分析能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 約翰 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/jean.png" class="character-img" alt="約翰·基爾休坦">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>約翰·基爾休坦</span>
+                <span class="badge badge-aot">一般士兵</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">104期訓練生</span>
+              </div>
+              <p class="card-text small">立體機動裝置的操作能力出眾，在訓練兵團中以此技能聞名。具有領導潛質。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">機動技術</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">領導能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 75%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 莎夏 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/sasha.png" class="character-img" alt="莎夏·布勞斯">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>莎夏·布勞斯</span>
+                <span class="badge badge-aot">一般士兵</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">104期訓練生</span>
+              </div>
+              <p class="card-text small">擁有敏銳的直覺和優秀的狙擊能力，在戰鬥中展現出驚人的運動神經。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">狙擊技術</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">直覺反應</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 柯尼 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/connie.png" class="character-img" alt="柯尼·斯普林格">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>柯尼·斯普林格</span>
+                <span class="badge badge-aot">一般士兵</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">104期訓練生</span>
+              </div>
+              <p class="card-text small">在訓練兵團中展現出優秀的平衡能力，立體機動技術相當出色。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">平衡能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">機動技術</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 歐魯 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/oluo.png" class="character-img" alt="歐魯·波扎德">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>歐魯·波扎德</span>
+                <span class="badge badge-aot">特別作戰班</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">精英士兵</span>
+              </div>
+              <p class="card-text small">里維特別作戰班的資深成員，擁有豐富的作戰經驗和出色的團隊合作能力。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">戰鬥經驗</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">團隊合作</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 佩托拉 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/petra.png" class="character-img" alt="佩托拉·拉爾">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>佩托拉·拉爾</span>
+                <span class="badge badge-aot">特別作戰班</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">精英士兵</span>
+              </div>
+              <p class="card-text small">特別作戰班中的優秀士兵，以出色的戰術執行能力和冷靜的判斷力著稱。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">戰術執行</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">判斷能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 君達 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="assets/img/soldiers/gunther.png" class="character-img" alt="君達·修茲">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>君達·修茲</span>
+                <span class="badge badge-aot">特別作戰班</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">精英士兵</span>
+              </div>
+              <p class="card-text small">特別作戰班的可靠成員，具有穩定的作戰能力和出色的團隊協調能力。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">作戰能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">團隊協調</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 艾魯多 -->
+        <div class="col fade-in">
+          <div class="card character-card h-100">
+            <img src="/assets/img/soldiers/eld.png" class="character-img" alt="艾魯多·琴">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                <span>艾魯多·琴</span>
+                <span class="badge badge-aot">特別作戰班</span>
+              </h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-1">精英士兵</span>
+              </div>
+              <p class="card-text small">特別作戰班中經驗豐富的成員，擅長近距離戰鬥和快速機動作戰。</p>
+              <div class="mb-2 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">近戰能力</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 88%"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span style="color: var(--default-color);">機動作戰</span>
+                  <div class="stat-bar w-75">
+                    <div class="stat-bar-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-aot">顯示更多士兵</button>
+      </div>
+    </section>
+
+    <!-- 巨人百科 -->
+    <section id="titans" class="my-5 fade-in">
+      <h2 class="section-title mb-4">巨人百科</h2>
+
+      <!-- 巨人分類導航 -->
+      <ul class="nav nav-tabs titan-nav mb-4">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#normal-titans">普通巨人</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#abnormal-titans">奇行種</a>
+        </li>
+      </ul>
+
+      <!-- 巨人內容 -->
+      <div class="tab-content">
+        <!-- 普通巨人 -->
+        <div class="tab-pane fade show active" id="normal-titans">
+          <div class="row mb-4">
+            <div class="col-lg-6">
+              <div class="card titan-detail-card mb-4">
+                <div class="card-header">
+                  <h5 class="mb-0">普通巨人總覽</h5>
+                </div>
+                <div class="card-body">
+                  <p>普通巨人是最常見的巨人類型，身高通常在3-15米之間。它們沒有智慧，行動純粹由本能驅使，主要目的是捕食人類。</p>
+                  <p>普通巨人的弱點是後頸部位，切斷該處深度和寬度各為1米的肉塊可以殺死巨人。這也是立體機動裝置設計的基礎。</p>
+
+                  <h5 class="text-warning mt-4 mb-3">研究記錄</h5>
+                  <div class="secret-info mb-3">
+                    <p class="mb-0">所有巨人實際上都是被變成巨人的艾爾迪亞人。他們無法消化所吞食的人類，只會將人類存放在胃部，直到吐出。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card titan-detail-card">
+                <img src="assets/img/titans/titans.jpg" class="card-img-top" alt="普通巨人">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 奇行種巨人 -->
+        <div class="tab-pane fade" id="abnormal-titans">
+          <div class="row mb-4">
+            <div class="col-lg-6">
+              <div class="card titan-detail-card mb-4">
+                <div class="card-header">
+                  <h5 class="mb-0">奇行種概述</h5>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">奇行種巨人的行為模式與普通巨人不同，具有不可預測性，對調查兵團造成極大威脅。它們可能會忽視附近的人類，轉而追擊特定目標。</p>
+                  <div class="mb-2 small">
+                    <div class="d-flex justify-content-between mb-1">
+                      <span style="color: var(--default-color);">危險程度</span>
+                      <div class="stat-bar w-75">
+                        <div class="stat-bar-fill" style="width: 85%"></div>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-1">
+                      <span style="color: var(--default-color);">不可預測性</span>
+                      <div class="stat-bar w-75">
+                        <div class="stat-bar-fill" style="width: 90%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card titan-detail-card">
+                <img src="/assets/img/titans/abnormalTitan.jpg" class="card-img-top" alt="奇行種巨人">
+                <div class="card-body">
+                  <h5 class="text-warning mb-3">特徵分析</h5>
+                  <ul class="small list-unstyled">
+                    <li style="color: var(--default-color);">• 行為模式不規律</li>
+                    <li style="color: var(--default-color);">• 具有特定目標導向性</li>
+                    <li style="color: var(--default-color);">• 移動方式異常</li>
+                    <li style="color: var(--default-color);">• 對人類威脅程度高</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">調查兵團</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>城牆區希干希納區前哨站</p>
+              <p>古城堡改建總部</p>
+              <p class="mt-3">
+                <strong>訊號聯繫:</strong> <span>煙霧信號或城牆通訊站</span>
+              </p>
+              <p><strong>信件聯繫:</strong> <span>調查兵團總部收發處</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href="https://www.facebook.com/emuse.com.tw" target="_blank"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/attackontitan/" target="_blank"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>重要連結</h4>
+            <ul>
+              <li><a href="index.html">首頁</a></li>
+              <li><a href="index.html#about">關於我們</a></li>
+              <li><a href="index.html#services">任務介紹</a></li>
+              <li><a href="terms.html">加入條款</a></li>
+              <li><a href="privacy-policy.html">隱私政策</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>兵團通訊</h4>
+            <p>訂閱我們的通訊，接收最新的任務情報和兵團動態！</p>
+            <form action="" method="post" class="newsletter-form">
+              <div class="form-group d-flex">
+                <input type="email" class="form-control" name="email" placeholder="請輸入您的信箱" required />
+                <button type="submit" class="btn">訂閱</button>
+              </div>
+              <div class="my-3">
+                <div class="loading d-none">載入中</div>
+                <div class="error-message"></div>
+                <div class="sent-message d-none">
+                  您的訂閱請求已送出，感謝您的支持！
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>版權所有</span>
+          <strong class="px-1 sitename">調查兵團</strong>
+          <span>保留所有權利</span>
+        </p>
+        <div class="credits"></div>
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        設計來自 <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+  </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/database.js"></script>
+</body>
+
+</html>

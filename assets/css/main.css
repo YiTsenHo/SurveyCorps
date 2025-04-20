@@ -454,94 +454,21 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-size: 14px;
-  position: relative;
+  padding: 60px 0 30px;
   background: var(--footer-bg);
   border-top: 3px solid var(--footer-border);
 }
 
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(to right, 
-    transparent 0%,
-    rgba(75, 98, 56, 0.1) 25%,
-    rgba(75, 98, 56, 0.1) 75%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
-.footer .footer-top {
-  padding-top: 50px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .footer-about .logo {
-  line-height: 1;
-  margin-bottom: 25px;
-}
-
-.footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
-}
-
-.footer .footer-about .logo span {
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-family: var(--heading-font);
-  color: var(--bright-title);
-}
-
-.footer .footer-about p {
-  font-size: 14px;
-  font-family: var(--heading-font);
-}
-
-.footer .social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid var(--military-green);
-  font-size: 16px;
-  color: var(--contrast-color);
-  background: var(--military-green);
-  margin-right: 10px;
-  transition: 0.3s;
-  background: var(--military-green);
-  border: 2px solid var(--cape-green);
-  transition: all 0.3s ease;
-}
-
-.footer .social-links a:hover {
-  background: var(--cape-green);
-  border-color: var(--cape-green);
-  transform: translateY(-3px);
-  background: var(--footer-hover);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+.footer .container {
+  position: relative;
+  z-index: 2;
 }
 
 .footer h4 {
   font-size: 16px;
   font-weight: bold;
-  position: relative;
-  padding-bottom: 12px;
-  color: var(--bright-title);
-}
-
-.footer .footer-links {
-  margin-bottom: 30px;
+  color: var(--heading-color);
+  margin-bottom: 20px;
 }
 
 .footer .footer-links ul {
@@ -550,174 +477,40 @@ h6 {
   margin: 0;
 }
 
-.footer .footer-links ul i {
-  padding-right: 2px;
-  font-size: 12px;
-  line-height: 0;
-}
-
 .footer .footer-links ul li {
   padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
 }
 
 .footer .footer-links ul a {
   color: var(--default-color);
-  display: inline-block;
-  line-height: 1;
+  transition: 0.3s;
 }
 
 .footer .footer-links ul a:hover {
-  color: var(--accent-color);
+  color: var(--footer-hover);
 }
 
-.footer .footer-contact p {
-  margin-bottom: 5px;
-}
-
-.footer .footer-newsletter {
-  margin-left: auto; /* 讓 newsletter 靠右 */
-  padding: 30px;
-  background: var(--dark-form-bg);
-  border-radius: 5px;
-  position: relative;
-  border: 1px solid var(--input-border);
-}
-
-.footer .footer-newsletter::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 50px;
-  height: 50px;
-  background: url('../img/wings-of-freedom.png') no-repeat center;
-  background-size: contain;
-  opacity: 0.2;
-}
-
-.footer .footer-newsletter .newsletter-form {
-  display: flex;
-  justify-content: space-between; /* 右對齊 submit button */
-  align-items: center;
-  gap: 10px;
-  padding: 8px;
-  background: rgba(29, 38, 23, 0.6);
-  border: 2px solid var(--military-green);
-  border-radius: 4px;
-}
-
-.footer .footer-newsletter .form-group {
-  gap: 10px;
-}
-
-.footer .footer-newsletter input[type="email"] {
-  flex: 1;
-  height: 40px; /* 固定高度 */
-  padding: 0 15px;
-  background: transparent;
-  border: 1px solid var(--input-border);
-  border-radius: 4px;
+.footer .footer-newsletter .form-control {
+  background-color: var(--dark-form-bg);
+  border-color: var(--input-border);
   color: var(--default-color);
 }
 
-.footer .footer-newsletter input[type="email"]::placeholder {
-  color: var(--default-color);
-  opacity: 0.6;
-}
-
-.footer .footer-newsletter button[type="submit"] {
-  height: 44px;
-  min-width: 100px; /* 增加最小寬度 */
-  padding: 0 25px;
-  border: none;
+.footer .footer-newsletter button {
   background: var(--military-green);
-  color: var(--contrast-color);
-  border-radius: 4px;
-  transition: 0.3s;
-  white-space: nowrap; /* 防止文字換行 */
-}
-
-.footer .footer-newsletter button[type="submit"]:hover {
-  background: var(--cape-green);
-  transform: translateY(-2px);
-}
-
-.footer .footer-newsletter .my-3 {
-  margin-top: 15px;
-}
-
-.footer .footer-newsletter .sent-message,
-.footer .footer-newsletter .loading,
-.footer .footer-newsletter .error-message {
-  padding: 10px;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.footer .footer-newsletter .sent-message {
-  background: rgba(40, 167, 69, 0.1);
-  border: 1px solid rgba(40, 167, 69, 0.2);
-  color: #28a745;
-}
-
-.footer .footer-newsletter .newsletter-form {
-  margin-top: 30px;
-  margin-bottom: 15px;
-  padding: 6px 8px;
-  position: relative;
-  border-radius: 4px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  display: flex;
-  background-color: var(--background-color);
+  border: none;
+  padding: 10px 24px;
+  color: var(--default-color);
   transition: 0.3s;
 }
 
-.footer .footer-newsletter .newsletter-form:focus-within {
-  border-color: var(--accent-color);
-}
-
-.footer .footer-newsletter .newsletter-form input[type=email] {
-  border: 0;
-  padding: 4px;
-  width: 100%;
-  background-color: var(--background-color);
-  color: var(--default-color);
-}
-
-.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
-  outline: none;
-}
-
-.footer .footer-newsletter .newsletter-form input[type=submit] {
-  margin-left: auto; /* 確保按鈕靠右 */
-  height: 40px;
-  min-width: 100px;
-  padding: 0 20px;
-  border: none;
-  background: var(--military-green);
-  color: var(--contrast-color);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+.footer .footer-newsletter button:hover {
+  background: var(--footer-hover);
 }
 
 .footer .copyright {
-  padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .copyright p {
-  margin-bottom: 0;
+  padding-top: 25px;
+  border-top: 1px solid var(--footer-border);
 }
 
 .footer .credits {
@@ -1536,14 +1329,14 @@ section,
 }
 
 .pricing h4 span {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: color-mix(in srgb, var (--default-color), transparent 50%);
   font-size: 18px;
 }
 
 .pricing ul {
   padding: 20px 0;
   list-style: none;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var (--default-color), transparent 30%);
   text-align: left;
   line-height: 20px;
 }
@@ -1561,11 +1354,11 @@ section,
 }
 
 .pricing ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  color: color-mix(in srgb, var (--default-color), transparent 60%);
 }
 
 .pricing ul .na i {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  color: color-mix(in srgb, var (--default-color), transparent 60%);
 }
 
 .pricing ul .na span {
@@ -2160,4 +1953,202 @@ section,
   background-repeat: no-repeat;
   background-position: right calc(.375em + .1875rem) center;
   background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.training-plan-options small.text-muted {
+  color: rgba(230, 232, 227, 0.8) !important; /* Using var(--default-color) with higher opacity */
+}
+
+/* Add hover effect for better interaction */
+.training-plan-options .form-check:hover small.text-muted {
+  color: rgba(230, 232, 227, 0.9) !important;
+}
+
+/*--------------------------------------------------------------
+# Database Page Styles
+--------------------------------------------------------------*/
+.character-card {
+  height: 420px;
+  overflow: hidden;
+  background-color: rgba(47, 61, 38, 0.9);
+}
+
+.character-img {
+  height: 240px;
+  object-fit: contain;
+  background-color: rgba(47, 61, 38, 0.9);
+  padding: 10px;
+  border-bottom: 2px solid var(--cape-green);
+}
+
+.badge-aot {
+  background-color: var(--military-green);
+  color: var(--default-color);
+}
+
+.titan-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.titan-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(26, 36, 22, 0.8);
+  padding: 15px;
+  transform: translateY(100%);
+  transition: transform 0.4s;
+}
+
+.titan-card:hover .titan-info {
+  transform: translateY(0);
+}
+
+.btn-aot {
+  background-color: var(--military-green);
+  color: var(--default-color);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-aot::after {
+  content: '';
+  position: absolute;
+  left: -20%;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: skewX(-20deg);
+  transition: width 0.3s;
+  z-index: -1;
+}
+
+.btn-aot:hover {
+  color: var(--background-color);
+}
+
+.btn-aot:hover::after {
+  width: 140%;
+}
+
+.filter-btn {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+  border: 1px solid var(--gear-metal);
+}
+
+.filter-btn:hover {
+  background-color: var(--military-green);
+  color: var(--default-color);
+}
+
+.filter-btn.active {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border-color: var(--accent-color);
+}
+
+.stat-bar {
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--wall-stone);
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+}
+
+.titan-nav {
+  border-bottom: 2px solid var(--military-green);
+}
+
+.titan-nav .nav-link {
+  color: var(--default-color);
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.titan-nav .nav-link:hover {
+  color: var(--accent-color);
+}
+
+.titan-nav .nav-link.active {
+  background-color: var(--military-green);
+  color: var(--default-color);
+  border: none;
+}
+
+.secret-info {
+  background-color: rgba(77, 99, 56, 0.2);
+  border-left: 4px solid var(--military-green);
+  padding: 10px;
+  margin-top: 15px;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.3); /* Brighter red with transparency */
+  border-color: #ff4757; /* Brighter red border */
+  color: #ff6b6b; /* Brighter red text */
+}
+
+.titan-detail-card {
+  background-color: rgba(47, 61, 38, 0.9);
+  border: 1px solid var(--military-green);
+}
+
+.titan-detail-card .card-header {
+  background-color: var(--military-green);
+  color: var(--default-color);
+  border-bottom: 1px solid var(--cape-green);
+}
+
+.titan-detail-card .card-body {
+  color: var(--default-color);
+}
+
+.titan-detail-card .card-text {
+  color: rgba(230, 232, 227, 0.9);
+}
+
+.character-card .card-title {
+  color: var(--default-color);
+}
+
+.character-card .stat-bar-text {
+  color: var(--default-color) !important;
+}
+
+.titan-detail-card {
+  height: 100%;
+  background-color: rgba(47, 61, 38, 0.9);
+  border: 1px solid var(--military-green);
+}
+
+.abnormal-titans-section {
+  margin-bottom: 30px;
 }

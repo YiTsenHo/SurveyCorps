@@ -4,6 +4,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorElement = form.querySelector('.error-message');
     const successElement = form.querySelector('.sent-message');
 
+    // 訓練計劃選擇邏輯
+    const trainingPlans = document.querySelectorAll('input[name="trainingPlan"]');
+    trainingPlans.forEach(plan => {
+        plan.addEventListener('change', function() {
+            // 根據選擇的計劃自動勾選對應的訓練項目
+            const basicTraining = document.getElementById('basicTraining');
+            const odmTraining = document.getElementById('odmTraining');
+            const combatTraining = document.getElementById('combatTraining');
+            
+            switch(this.value) {
+                case 'basic':
+                    basicTraining.checked = true;
+                    odmTraining.checked = false;
+                    combatTraining.checked = false;
+                    break;
+                case 'advanced':
+                    basicTraining.checked = true;
+                    odmTraining.checked = true;
+                    combatTraining.checked = false;
+                    break;
+                case 'elite':
+                    basicTraining.checked = true;
+                    odmTraining.checked = true;
+                    combatTraining.checked = true;
+                    break;
+            }
+        });
+    });
+
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
